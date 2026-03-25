@@ -108,7 +108,7 @@ cv::Mat to442_sobel_neon(const cv::Mat& gray, cv::Mat& dest, int local_start, in
         const uint8_t* curr = gray.ptr<uint8_t>(row);
         const uint8_t* next = gray.ptr<uint8_t>(row + 1);
 
-        //
+        // direct write-out path
         uint8_t* temp_dst = dest.ptr<uint8_t>(row - local_start);
 
         // iterating through the cols but starting at one
